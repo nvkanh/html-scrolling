@@ -1,5 +1,84 @@
+@font-face {
+  font-family: 'UTM Neo Sans IntelBold_Italic';
+  src: url('../fonts/UTM Neo Sans IntelBold_Italic.eot');
+  src: url('../fonts/UTM Neo Sans IntelBold_Italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/UTM Neo Sans IntelBold_Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UTMNeoSansIntel-BoldItalic';
+  src: url('../fonts/UTMNeoSansIntel-BoldItalic.svg#UTMNeoSansIntel-BoldItalic') format('svg'),
+    url('../fonts/UTMNeoSansIntel-BoldItalic.ttf') format('truetype'),
+    url('../fonts/UTMNeoSansIntel-BoldItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UTMNeoSansIntel';
+  src: url('../fonts/UTMNeoSansIntel.svg#UTMNeoSansIntel') format('svg'),
+    url('../fonts/UTMNeoSansIntel.ttf') format('truetype'),
+    url('../fonts/UTMNeoSansIntel.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UTMNeoSansIntel-Italic';
+  src: url('../fonts/UTMNeoSansIntel-Italic.svg#UTMNeoSansIntel-Italic') format('svg'),
+    url('../fonts/UTMNeoSansIntel-Italic.ttf') format('truetype'),
+    url('../fonts/UTMNeoSansIntel-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UTM Neo Sans IntelBold';
+  src: url('../fonts/UTMNeoSansIntelBold.svg#UTMNeoSansIntelBold') format('svg'),
+    url('../fonts/UTMNeoSansIntelBold.ttf') format('truetype'),
+    url('../fonts/UTMNeoSansIntelBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.primary-heading {
+  font-family: 'UTM Neo Sans IntelBold';
+  font-size: 120px;
+  line-height: 130%;
+  margin: 0;
+}
+
+.secondary-heading {
+  font-family: 'UTMNeoSansIntel';
+  font-size: 35px;
+  line-height: 48px;
+  margin: 0;
+}
+
 .section--fullscreen {
   height: 400vh;
+  color: #ffffff;
+  background-color: #0F1327;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.text-gradient {
+  background: linear-gradient(91.92deg, #1BCD58 61.5%, #279FFF 98.65%),
+    linear-gradient(92.26deg, #1BCD58 53.83%, #279FFF 96.32%),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section--fullscreen .logo .text-line:nth-child(2) {
+  margin-top: -68px;
 }
 
 .section--fullscreen .section__wrapper {
@@ -15,10 +94,148 @@
   width: 100%;
 }
 
+.overlay {
+  transition: all 1.5s ease;
+  opacity: 0;
+}
+
+.overlay--1 {
+  width: auto;
+  height: 67.8233438%;
+  position: absolute;
+  top: -40.7991588%;
+  left: 0;
+}
+
+.overlay--2 {
+  width: auto;
+  height: 66.1409043%;
+  position: absolute;
+  top: -41.4300736%;
+  right: 0;
+}
+
+.overlay--3 {
+  width: 25.8333333%;
+  height: auto;
+  position: absolute;
+  bottom: -11.3564669%;
+  left: 10.2604167%;
+}
+
+.overlay--4 {
+  height: 89.064143%;
+  width: auto;
+  position: absolute;
+  top: 0;
+  right: 3.59375%;
+}
+
+.overlay-top-left .overlay--1,
+.overlay-top-left .overlay--2 {
+  opacity: 1;
+}
+
+.overlay-left-center .overlay--3,
+.overlay-left-center .overlay--4 {
+  opacity: 1;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease;
+}
+
+.overlay-left-center .overlay-image {
+  opacity: 0;
+}
+
+.overlay-image img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-image::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(33.19% 104.5% at 53.26% 50%, rgba(12, 16, 36, 0) 0%, #0C1024 100%, #0C1024 100%);
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.dots {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.scrolling-swiper {
+  position: relative;
+  z-index: 10;
+}
+
 .scrolling-swiper .swiper-slide .box {
+  font-family: 'UTMNeoSansIntel';
+  font-size: 20px;
+  line-height: 30px;
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  transition: all 1.2s ease;
+  pointer-events: none;
+  position: relative;
+}
+
+.scrolling-swiper .swiper-slide .box--has-overlay>div {
+  position: relative;
+  z-index: 10;
+}
+
+.scrolling-swiper .swiper-slide .desc {
+  max-width: 790px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.scrolling-swiper .swiper-slide.swiper-slide-prev .box {
+  -webkit-transform: translateY(-200px);
+  transform: translateY(-200px);
+  will-change: transform;
+}
+
+.scrolling-swiper .swiper-slide.swiper-slide-active .box {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  pointer-events: all;
+}
+
+.scrolling-swiper .swiper-slide.swiper-slide-next .box {
+  -webkit-transform: translateY(200px);
+  transform: translateY(200px);
+  will-change: transform;
+}
+
+.section--fullscreen .logo {
+  text-align: center;
 }
